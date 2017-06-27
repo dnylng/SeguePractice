@@ -10,10 +10,25 @@ import UIKit
 
 class PlaySongVC: UIViewController {
 
+    // Reference to the song title in PlaySongVC view
+    @IBOutlet weak var songLbl: UILabel!
+    
+    // Private variable referencing the selected song
+    private var _selectedSong: String!
+    
+    // Getter/Setter for private var selectedSong
+    var selectedSong: String {
+        get {
+            return _selectedSong
+        } set {
+            _selectedSong = newValue
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        songLbl.text = _selectedSong
     }
 
     override func didReceiveMemoryWarning() {
